@@ -7,21 +7,27 @@ import {
   CardFooter,
   CardHeader,
   Flex,
+  Heading,
   IconButton,
+  Image,
+  Text,
 } from "@chakra-ui/react";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { BiLike } from "react-icons/bi";
+import { BiChat } from "react-icons/bi";
+import { BiShare } from "react-icons/bi";
 import React from "react";
 
-export default function PostCard() {
+export default function PostCard({ title, description, category }) {
   return (
     <Card maxW="md">
       <CardHeader>
         <Flex spacing="4">
           <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-            <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
-
+            <Avatar name="Segun Adebayo" />
             <Box>
-              <Heading size="sm">Segun Adebayo</Heading>
-              <Text>Creator, Chakra UI</Text>
+              <Heading size="sm">{title}</Heading>
+              <Text>{category}</Text>
             </Box>
           </Flex>
           <IconButton
@@ -33,11 +39,7 @@ export default function PostCard() {
         </Flex>
       </CardHeader>
       <CardBody>
-        <Text>
-          With Chakra UI, I wanted to sync the speed of development with the
-          speed of design. I wanted the developer to be just as excited as the
-          designer to create a screen.
-        </Text>
+        <Text>{description}</Text>
       </CardBody>
       <Image
         objectFit="cover"
