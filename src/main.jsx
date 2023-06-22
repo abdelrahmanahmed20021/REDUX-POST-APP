@@ -6,12 +6,15 @@ import { theme } from "./theme/theme.js";
 import "./sass/main.scss";
 import { Provider } from "react-redux";
 import { store } from "./utils/store/store.js";
+import Router from "./routes/router.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <Provider store={store}>
-        <App />
+        <Router>
+          <App />
+        </Router>
       </Provider>
     </ChakraProvider>
   </React.StrictMode>
